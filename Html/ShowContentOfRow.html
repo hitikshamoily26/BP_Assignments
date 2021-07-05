@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>List of Books</title>
+</head>
+
+<body>
+<h3>List Of Books:</h3>
+Enter Row Number To See Details of: <input type="number" id="num" name="num">
+
+<p><input type="button" id="btR" value="Show Row Data" onclick="ShowRowDetails()" /></p>
+    <p id="infoR"></p>
+    
+    <p><input type="button" id="bt" value="Show Table Data" onclick="showTableData()" /></p>
+    <p id="info"></p>
+
+<table id="myTable" cellpadding="10"cellspacing="0" >
+
+
+<script>
+      function showTableData() {
+      
+        document.getElementById('info').innerHTML = "";
+        var myTab = document.getElementById('myTable');
+        for (i = 1; i < myTab.rows.length; i++) {  
+            var objCells = myTab.rows.item(i).cells;
+            for (var j = 0; j < objCells.length; j++) {
+                info.innerHTML = info.innerHTML +''+ objCells.item(j).innerHTML+'|';
+            }
+            info.innerHTML = info.innerHTML + '<br />';     
+        }
+    }
+      
+</script>
+
+<script>
+    function ShowRowDetails(){
+    var RowValue = document.getElementById("num").value;
+ document.getElementById('infoR').innerHTML = "";
+        var myTab = document.getElementById('myTable');
+            var objCells = myTab.rows.item(RowValue).cells; 
+            for (var j = 0; j < objCells.length; j++) {
+                infoR.innerHTML = infoR.innerHTML +''+ objCells.item(j).innerHTML+'|';
+            }
+            infoR.innerHTML = infoR.innerHTML + '<br />';   
+        }
+    </script>  
+
+<tr style="text-align:left" bgcolor="#F0F0F0">
+
+<th>
+Book Name
+</th>
+<th >
+Author
+</th>
+<th>
+Cost
+</th>
+<th>
+Published date
+</th>
+<th>
+Total pages
+</th>
+<th>
+Rating
+</th>
+
+</tr>
+
+<tr >
+<td>
+Think like a Monk
+</td>
+<td>
+Jay Shetty
+</td>
+<td>
+499
+</td>
+<td>
+September 2020
+</td>
+<td>
+320
+</td>
+<td>
+4.8
+</td>
+</tr>
+
+<tr>
+<td>
+The secret
+</td>
+<td>
+Rhonda Byrne
+</td>
+<td>
+799
+</td>
+<td>
+November 2006
+</td>
+<td>
+198
+</td>
+<td>
+4.3
+</td>
+</tr>
+
+<tr>
+<td>
+Wings of Fire
+</td>
+<td>
+A.P.J Abdul kalam and Arun Tiwari
+</td>
+<td>
+399
+</td>
+<td>
+July 1999
+</td>
+<td>
+180
+</td>
+<td>
+4.6
+</td>
+</tr>
+
+<tr>
+<td>
+Ikigai
+</td>
+<td>
+Francesc Miralles and Hector Garcia
+</td>
+<td>
+359
+</td>
+<td>
+April 2016
+</td>
+<td>
+208
+</td>
+<td>
+4.2
+</td>
+</tr>
+
+<tr>
+<td>
+The Power of Habit
+</td>
+<td>
+Charles Duhigg
+</td>
+<td>
+150
+</td>
+<td>
+February 2013
+</td>
+<td>
+400
+</td>
+<td>
+4.3
+</td>
+</tr>
+
+<tr>
+<td>
+The Power of Kindness
+</td>
+<td>
+Dalai Lama
+</td>
+<td>
+1732
+</td>
+<td>
+October 2007
+</td>
+<td>
+304
+</td>
+<td>
+4.4
+</td>
+</tr>
+
+<tr>
+<td>
+The secret
+</td>
+<td>
+Rhonda Byrne
+</td>
+<td>
+799
+</td>
+<td>
+November 2006
+</td>
+<td>
+198
+</td>
+<td>
+4.3
+</td>
+</tr>
+
+</table>
+</body>
+</html>
