@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+  <head>
+	<title>Shift cipher</title>
+	<script type = "text/JavaScript">
+function shiftCipher(str, shift) {
+  const alphabetArr = "abcdefghijklmnopqrstuvwxyz".split("");
+  let res = "";
+
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    const idx = alphabetArr.indexOf(char);
+
+    // if it is not a letter, don`t shift it
+    if (idx === -1) {
+      res += char;
+      continue;
+    }
+
+    // only 26 letters in alphabet, if > 26 it wraps around
+    const encodedIdx = (idx + shift) % 26;
+    res += alphabetArr[encodedIdx];
+  }
+  return res;
+}
+
+function shiftDecryption (encryptedString, unshiftAmount) {
+    var plainText = "";
+    for(var i = 0; i < encryptedString.length; i++) {
+        var encryptedCharacter = encryptedString.charCodeAt(i);
+        if(encryptedCharacter >= 97 && encryptedCharacter <= 122) {
+            plainText += String.fromCharCode((encryptedCharacter-97 - unshiftAmount + 26) %26 + 97 );
+        } else if(encryptedCharacter >= 65 && encryptedCharacter <= 90) {
+            plainText += String.fromCharCode((encryptedCharacter-65 - unshiftAmount + 26) %26 + 65 );
+        } else {
+            plainText += String.fromCharCode(plainCharacter);
+        }
+    }
+    return plainText;
+}
+</script>
+
+  </head>
+  <body>
+    <h1>Shift cipher</h1>
+	
+	<input type="button" onClick="alert(shiftCipher('kindheart',3))" value="Encrpyt"/>
+	<input type="button" onClick="alert(shiftDecryption('nlqgkhduw',3))" value="Decrypt"/>
+	
+  </body>
+</html>
