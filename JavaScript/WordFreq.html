@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		count string occurrence in a string
+	</title>
+</head>
+
+<body>
+
+	<h1>
+	Word Occurences
+	</h1>
+	<h3>
+	Count word occurrence in a sentence.
+	</h3>
+
+	<button onClick="countWordOccurences()">
+		count
+	</button>
+	<p id="p1">
+
+	</p>
+
+	<!-- Script to count string
+		occurrence in a string -->
+	<script>
+		function countWordOccurences() {
+			var s = "Be kind to everyone and be loyal";
+			var f = "be";
+			var r = s.split(f).length - 1;
+			document.getElementById("p1").innerHTML = r;
+		}
+	</script>
+</body>
+
+</html>
