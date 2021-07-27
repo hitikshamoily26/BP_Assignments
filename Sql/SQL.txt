@@ -1,0 +1,51 @@
+CREATE TABLE Customer ( 
+  CustomerId integer, 
+  Customername TEXT, 
+  Contactname TEXT, 
+  Address TEXT, 
+  City TEXT, 
+  PostalCode TEXT, 
+  Country TEXT, 
+  MarketCap double 
+  );
+
+INSERT INTO Customer VALUES 
+(1, 'Patil Grp', 'Sanket Patil', 'Patil Estate Bhor', 'Pune', '411001', 'India', 2789432879), 
+(2, 'Nikhar Brothers', 'Rahul Nikhar', 'Nikhar Mahal', 'Nagpur', '440001', 'India', 910052879), 
+(3, 'Gholap Org', 'Gauri Gholap', 'Gholap & Gholap', 'Nashik', '420005', 'India', 89152879), 
+(4, 'Patil Grp', 'Kalyani Patil', 'Patil Estate Pune', 'Pune', '411001', 'India', 789152879), 
+(5, 'Punekars', 'Sneha Punekar', 'Pune', 'Pune', '411001', 'India', 25349152879), 
+(6, 'Malve Grp', 'Pooja Malve', 'Malve Estate', 'Nashik', '420003', 'India',64539152879), 
+(7, 'Kere Properties', 'Dhanashree Kere', 'Kere Estate', 'Thane', '400080', 'India',2789152879), 
+(11, 'Patil Grp', 'Sanket Patil', 'Patil Estate Bhor', 'Osaka', '11001', 'Japan',6745352879), 
+(12, 'Nikhar Brothers', 'Rahul Nikhar', 'Nikhar Mahal', 'Oslo', '40001', 'Norway',27563152879), 
+(13, 'Gholap Org', 'Gauri Gholap', 'Gholap & Gholap', 'London', 'E0005', 'UK',915867585642879), 
+(14, 'Patil Grp', 'Kalyani Patil', 'Patil Estate Pune', 'Paris', '11001', 'France',2976789152879), 
+(15, 'Punekars', 'Sneha Punekar', 'NSW', 'New Jersey', '11001', 'USA',776589152879), 
+(16, 'Malve Grp', 'Pooja Malve', 'Malve Estate', 'Sydney', '20003', 'Australia',6349152879), 
+(17, 'Kere Properties', 'Dhanashree Kere', 'Kere Estate', 'Singapore', '422080', 'Singapore',2004552879);
+
+SELECT * FROM Customer;
+
+UPDATE Customer 
+SET Address = "Boriwali" WHERE CustomerId = 5;
+
+SELECT * FROM Customer 
+WHERE CustomerId < 10;
+
+UPDATE Customer SET 
+Address = "Nashik Road" 
+WHERE Contactname = "Gauri Gholap";
+
+SELECT * FROM Customer WHERE CustomerId > 10;
+
+UPDATE Customer SET City = "Nashik" , 
+  PostalCode = "422101", 
+  Country = "India", 
+  MarketCap = 9922334455 
+  WHERE Contactname = "Gauri Gholap" and CustomerId = 13;
+  
+SELECT * FROM Customer 
+WHERE CustomerId BETWEEN 10 and 15;
+
+SELECT * FROM Customer;
